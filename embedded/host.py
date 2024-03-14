@@ -13,6 +13,8 @@ channel = serial.Serial(args.port[0])
 channel.timeout = 0.05
 
 def check_for_bracets(s):
+    print(s)
+
     pattern = r'^\((.*)\)$'
     return bool(re.match(pattern, s))
 
@@ -31,19 +33,20 @@ while True:
 
     if line:
         try:
-            decoded_line = line.decode("utf8")
-            print(decoded_line)
+            decoded_line = line.decode("utf8").strip()
+            print("last character: " + str(len(decoded_line)))
 
             if check_for_bracets(decoded_line):
                 if(len(username) == 0):
-                    username = decoded_line
+                    username = decoded_line[1:-1]
                 else:
-                    password = decoded_line
+                    password = decoded_line[1:-1]
 
             if len(username) > 0 and len(password) > 0:
-            #call selenium
-            
-            # empty password and email
+                from login import fun
+                fun(username, password)
+                username = ""
+                password = ""
         except ValueError:
             print("error decode")
             pass

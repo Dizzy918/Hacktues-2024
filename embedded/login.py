@@ -3,8 +3,6 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 
-mail = input("Enter your mail: ")
-password = input("Enter your password: ")
 
 def fun(mail, password):
     
@@ -27,13 +25,10 @@ def fun(mail, password):
     next_button = driver.find_element(By.XPATH, "//span[text()='Next']")
     next_button.click()
 
-    sleep(5)
+    sleep(15)
     error_div = driver.find_element(By.XPATH, "//div[@jsname='B34EJ']")
     
     print("Error message:", error_div.text)
-    
-    sleep(10)
-    driver.quit()
-    print("Finished succesfuly")
 
-fun(mail, password)
+    print("Finished succesfuly")
+    driver.quit()
