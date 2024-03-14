@@ -35,25 +35,26 @@ def login(mail, password):
 def unlimited_sleep():
     global running
     #while True:
-    sleep(10)
-        
-driver = login(mail, password)
-
-t = threading.Thread(target=unlimited_sleep)
-t.start()
+    sleep(5)
+    logout(driver)
 
 def logout(driver):
-    print("A")
+
+    #t.join()
+
+    print("A")  
     global running
 
-    sleep(2)
+    sleep(5)
 
-    profile_button = driver.find_element(By.ID, "yDmH0d")
+    profile_button = driver.find_element(By.CLASS_NAME, "gb_Fa")
     profile_button.click()
-    sleep(2)
+    print("b")
+    sleep(5)
 
-    signout_button = driver.find_element(By.CLASS_NAME, "V5tzAf jFfZdd Dn5Ezd")
+    signout_button = driver.find_element(By.CLASS_NAME, "JWEMkf")
     signout_button.click()
+    print("c")
     sleep(2)
 
     removeprofile_button = driver.find_element(By.CLASS_NAME, "lCoei YZVTmd SmR8")
@@ -71,6 +72,11 @@ def logout(driver):
     running = False
     driver.quit()
 
+driver = login(mail, password)
 
+t = threading.Thread(target = unlimited_sleep())
+t.start()
 
 logout(driver)
+
+sleep(30)
