@@ -34,7 +34,6 @@ while True:
     if line:
         try:
             decoded_line = line.decode("utf8").strip()
-            print("last character: " + str(len(decoded_line)))
 
             if check_for_bracets(decoded_line):
                 if(len(username) == 0):
@@ -43,7 +42,7 @@ while True:
                     password = decoded_line[1:-1]
 
             if len(username) > 0 and len(password) > 0:
-                from login import fun
+                from login1 import fun
                 fun(username, password)
                 username = ""
                 password = ""
