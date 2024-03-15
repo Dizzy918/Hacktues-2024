@@ -24,5 +24,4 @@ def fun(mail, password):
     next_button = driver.find_element(By.XPATH, "//span[text()='Next']")
     next_button.click()
 
-    while True:
-        sleep(10)
+    driver.quit()
