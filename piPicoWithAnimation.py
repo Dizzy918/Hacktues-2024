@@ -57,11 +57,8 @@ while True:
     # Login -> "Login: (username, password)"
     # Logout -> "Logout"
     if button_login.value == False:
-        print(email1)
-        print(password1)
         time.sleep(1)
     elif button_logout.value == False:
-        print("Logout")
         time.sleep(1)
 
     if (timer + 0.1) < time.monotonic():

@@ -27,21 +27,20 @@ def logout():
     
     global driver
 
-    driver.implicitly_wait(10)
+    # driver.implicitly_wait(10)
     profile_button = driver.find_element(By.CLASS_NAME, "gb_Fa")
     profile_button.click()
     iframe = driver.find_element(By.XPATH, "//iframe[@name='account']")
-    print(iframe)
+    # print(iframe)
     driver.switch_to.frame(iframe)
     sleep(3)
 
     container = driver.find_element(By.CLASS_NAME, "JWEMkf")
     links = container.find_elements(By.TAG_NAME,"a")
-    print(links)
+    # print(links)
     signout_button = links[1]
     signout_button.click()
-    sleep(3)
+    sleep(2)
 
     driver.switch_to.default_content()
-
     driver.quit()
