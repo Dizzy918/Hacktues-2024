@@ -9,8 +9,8 @@ import displayio
 import adafruit_displayio_ssd1306
 import adafruit_imageload
 
-email = "daniel.b.yordanov.2022@elsys-bg.org"
-password = "dani08201214012119"
+email = "testacc201235@gmail.com"
+password = "testacc123456"
 
 email1 = f"({email})"
 password1 = f"({password})"
