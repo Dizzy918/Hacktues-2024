@@ -11,10 +11,10 @@ mail = 'aleks.i.gerasimov.2022@elsys-bg.org'
 password = 'Sladoled'
 
 running = True
+driver = webdriver.Chrome()
 
 def login(mail, password):
-    
-    driver = webdriver.Chrome()
+    global driver
     driver.get("https://accounts.google.com/InteractiveLogin/signinchooser?continue=https%3A%2F%2Fclassroom.google.com%2F%3Femr%3D0&flowEntry=ServiceLogin&flowName=GlifWebSignIn&followup=https%3A%2F%2Fclassroom.google.com%2F%3Femr%3D0&ifkv=ATuJsjx1Te0um30YO4g8V2XnqUi_0vgBhLBi4SMQAeVJ_FslFH6o8GZmokr0WRVo8YP31jWFrifMbg&passive=1209600&service=classroom&theme=glif")
     
     email_input = driver.find_element(By.XPATH, "//input[@type='email']")
@@ -32,17 +32,14 @@ def login(mail, password):
     next_button = driver.find_element(By.XPATH, "//span[text()='Next']")
     next_button.click()
 
-    return driver
-
 def unlimited_sleep():
     global running
     sleep(5)
     logout(driver)
 
-def logout(driver):
-
-    print("A")  
+def logout():
     global running
+    global driver
 
     sleep(3)
 
@@ -79,7 +76,3 @@ def logout(driver):
 
     running = False
     driver.quit()
-
-driver = login(mail, password)
-
-logout(driver)
