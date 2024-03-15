@@ -40,6 +40,9 @@ while True:
                     username = decoded_line[1:-1]
                 else:
                     password = decoded_line[1:-1]
+            else:
+                if decoded_line == "Logout":
+                    print("5")
 
             if len(username) > 0 and len(password) > 0:
                 from login1 import fun
