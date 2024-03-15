@@ -44,6 +44,7 @@ while True:
                 if decoded_line == "Logout":
                     from selenium_test import logout
                     logout()
+                    break
 
             if len(username) > 0 and len(password) > 0:
                 from selenium_test import login
