@@ -28,7 +28,7 @@ def logout():
     global driver
 
     # driver.implicitly_wait(10)
-    profile_button = driver.find_element(By.CLASS_NAME, "gb_Fa")
+    profile_button = driver.find_element(By.CLASS_NAME, "gb_Ia")
     profile_button.click()
     iframe = driver.find_element(By.XPATH, "//iframe[@name='account']")
     # print(iframe)
