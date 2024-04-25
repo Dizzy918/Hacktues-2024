@@ -33,7 +33,7 @@ while True:
 
     if line:
         try:
-            decoded_line = line.decode("utf8").strip()
+            decoded_line = line.decode("utf8").strip()  
 
             if check_for_bracets(decoded_line):
                 if(len(username) == 0):
